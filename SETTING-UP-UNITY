@@ -2,14 +2,14 @@ Download Unity Hub
 
 Download Latest Stable version of the unity editor
 
-Clone Our Game-Jam-2019 repo into your machine (USING THE COMMAND LINE)
+Clone Our Game-Jam-2019 repo into your machine (USING THE COMMAND LINE, DONT CHANGE THE NAME OF THE FOLDER)
 
 Open Unity Hub
 
-ADD the cloned directory as a project
+click the ADD button, and look for the directory where you cloned our repo
 
 Open the project
 
-In the GITHUB windown inside the editor, log in into your github account
+In the GITHUB window inside the editor, log in into your github account
 
 FETCH
