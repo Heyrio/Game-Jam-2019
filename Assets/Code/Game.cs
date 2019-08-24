@@ -61,6 +61,8 @@ public class Game : MonoBehaviour
     "Dario",
     "Willard" };
 
+    public List<MobStats> mob_stats_list;
+
     void Start()
     {
         
