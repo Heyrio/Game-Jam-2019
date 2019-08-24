@@ -14,9 +14,7 @@ public class Game : MonoBehaviour
     public int mob_max_count = 20;
     public List<Mob> mob_list;
 
-    public Queue<Mob> mob_queue;
-
-    public static List<MobStats> mob_stats_list;
+    public List<MobStats> mob_stats_list;
 
     void Start()
     {
@@ -51,5 +49,10 @@ public class Game : MonoBehaviour
     public void addMob(Mob mob)
     {
         mob_list.Add(mob);
+    }
+
+    public MobStats getRandomMobStats()
+    {
+        return mob_stats_list[Random.Range(0, mob_stats_list.Count)];
     }
 }

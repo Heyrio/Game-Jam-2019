@@ -8,10 +8,15 @@ public class Mob : MonoBehaviour
     public Vector2[] positions;
     public bool inside = false;
 
+    void Awake()
+    {
+        mob_stats = FindObjectOfType<Game>().getRandomMobStats();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = mob_stats.sprite;
+
     }
 
     // Update is called once per frame
