@@ -29,17 +29,35 @@ public class MobQueue : MonoBehaviour
 
     public void updateCurrent()
     {
-        current_mob = mob_queue[0];
+        if (mob_queue.Count > 0)
+        {
+            current_mob = mob_queue[0];
+        }
+        else
+        {
+            current_mob = null;
+        }
         choose_timer = max_choose_timer;
     }
 
+    //important events
     public void acceptCurrent()
     {
-
+        if (current_mob != null) {
+            FindObjectOfType<Game>().addMob(current_mob);
+            mob_queue.Remove(current_mob);
+            choose_timer = max_choose_timer;
+            updateCurrent();
+        }
     }
 
     public void denyCurrent()
     {
-
+        if (current_mob != null)
+        {
+            mob_queue.Remove(current_mob);
+            choose_timer = max_choose_timer;
+            updateCurrent();
+        }
     }
 }

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d250724ea8d904a46b744559ecc418a9, type: 3}
   m_Name: MobStats2
   m_EditorClassIdentifier: 
-  age: 0
-  worth: 0
-  type: []
-  staying_time: {x: 0, y: 0}
-  likes_age_range: {x: 0, y: 0}
-  not_like_type: []
+  age: 25
+  worth: 3
+  type:
+  - dirty
+  staying_time: {x: 10, y: 13}
+  likes_age_range: {x: 18, y: 33}
+  not_like_type:
+  - clean

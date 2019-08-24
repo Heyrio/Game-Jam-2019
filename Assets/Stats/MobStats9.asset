@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d250724ea8d904a46b744559ecc418a9, type: 3}
-  m_Name: MobStats
+  m_Name: MobStats9
   m_EditorClassIdentifier: 
-  age: 0
-  worth: 0
-  type: []
-  staying_time: {x: 0, y: 0}
-  likes_age_range: {x: 0, y: 0}
-  not_like_type: []
+  age: 44
+  worth: 75
+  type:
+  - drunk
+  - exciting
+  - clean
+  staying_time: {x: 4, y: 7}
+  likes_age_range: {x: 18, y: 50}
+  not_like_type:
+  - quiet

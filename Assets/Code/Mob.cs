@@ -12,7 +12,7 @@ public class Mob : MonoBehaviour
     void Awake()
     {
         mob_stats = FindObjectOfType<Game>().getRandomMobStats();
-        staying_time = Random.Range(mob_stats.staying_time.x, mob_stats.staying_time.y);
+        staying_time = Random.Range(mob_stats.staying_time.x, mob_stats.staying_time.y) * 7 * 2;
     }
 
     // Start is called before the first frame update
