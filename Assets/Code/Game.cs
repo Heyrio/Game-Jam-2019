@@ -16,12 +16,17 @@ public class Game : MonoBehaviour
 
     public static string[] types =
     {
-        "night owl",
-        "early bird",
-        "narcissist",
-        "pretentious",
-        "drunk"
-    }
+        "drunk",
+        "sober",
+        "loud",
+        "quiet",
+        "rich",
+        "poor",
+        "boring",
+        "exciting",
+        "clean",
+        "dirty"
+    };
 
     public List<MobStats> mob_stats_list;
 

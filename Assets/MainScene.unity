@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current_mob: {fileID: 0}
   mob_queue: []
+  choose_timer: 30
+  max_choose_timer: 30
 --- !u!4 &94454523
 Transform:
   m_ObjectHideFlags: 0
@@ -201,8 +203,7 @@ MonoBehaviour:
   money: 0
   mob_max_count: 20
   mob_list: []
-  mob_stats_list:
-  - {fileID: 11400000, guid: da87504e0afd9594e938606c83df4546, type: 2}
+  mob_stats_list: []
 --- !u!81 &263657292
 AudioListener:
   m_ObjectHideFlags: 0

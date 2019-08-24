@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MobStats", menuName = "ScriptableObjects/MobStats", order = 1)]
+[CreateAssetMenu(fileName = "MobStats", menuName = "MobStats", order = 1)]
 public class MobStats : ScriptableObject
 {
     public int age;
