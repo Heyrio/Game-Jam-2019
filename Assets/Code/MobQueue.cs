@@ -6,23 +6,23 @@ public class MobQueue : MonoBehaviour
 {
     public Mob current_mob;
     public List<Mob> mob_queue;
-    public float choose_timer = 30;
+    public float choose_timer = 30f;
     public int max_choose_timer = 30;
     // Start is called before the first frame update
     void Start()
     {
-        
+        choose_timer = max_choose_timer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        while(current_mob != null)
+        if(current_mob != null)
         {
             choose_timer -= Time.deltaTime;
             if(choose_timer < 0f)
             {
-                break;
+                Debug.Log("LOSE");
             }
         }
     }

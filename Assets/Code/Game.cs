@@ -14,6 +14,15 @@ public class Game : MonoBehaviour
     public int mob_max_count = 20;
     public List<Mob> mob_list;
 
+    public static string[] types =
+    {
+        "night owl",
+        "early bird",
+        "narcissist",
+        "pretentious",
+        "drunk"
+    }
+
     public List<MobStats> mob_stats_list;
 
     void Start()
