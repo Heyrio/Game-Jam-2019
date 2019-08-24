@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Mob", menuName = "ScriptableObjects/Mob", order = 1)]
+[CreateAssetMenu(fileName = "MobStats", menuName = "ScriptableObjects/MobStats", order = 1)]
 public class MobStats : ScriptableObject
 {
     readonly public int age = Random.Range(18, 44);
