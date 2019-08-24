@@ -14,6 +14,15 @@ public class Game : MonoBehaviour
     public int mob_max_count = 20;
     public List<Mob> mob_list;
 
+    public static string[] types =
+    {
+        "night owl",
+        "early bird",
+        "narcissist",
+        "pretentious",
+        "drunk"
+    }
+
     public List<MobStats> mob_stats_list;
 
     void Start()
@@ -49,6 +58,16 @@ public class Game : MonoBehaviour
     public void addMob(Mob mob)
     {
         mob_list.Add(mob);
+        mob.inside = true;
+
+        //this os where we check if the player fucked up
+    }
+
+    public void removeMob(Mob mob)
+    {
+        mob_list.Remove(mob);
+        mob.inside = false;
+        Destroy(mob.gameObject);
     }
 
     public MobStats getRandomMobStats()
