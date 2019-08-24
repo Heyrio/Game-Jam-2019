@@ -8,60 +8,15 @@ public class Game : MonoBehaviour
     public int day = 0;
     private float time = 0f;
     private int time_diff = 7;
+
+    public long money;
+
+    public int mob_max_count = 20;
     public List<Mob> mob_list;
 
-    private static string[] names = {
-    "Fernanda",
-    "Jamal",
-    "Darrell",
-    "Suzette",
-    "Cindy",
-    "Jo",
-    "Jame",
-    "Lecia",
-    "Vern",
-    "Coralie",
-    "Liane",
-    "Pearline",
-    "Aisha",
-    "Rex",
-    "Stefani",
-    "Heide",
-    "Bebe",
-    "Ping",
-    "Milo",
-    "Collin",
-    "Salley",
-    "Marlyn",
-    "Melissia",
-    "France",
-    "Madelene",
-    "Star",
-    "Mathilde",
-    "Gigi",
-    "Mellisa",
-    "Tonda",
-    "Georgette",
-    "Marcel",
-    "Trudi",
-    "Vita",
-    "Katharyn",
-    "Antone",
-    "Lashaun",
-    "Darin",
-    "Sook",
-    "Ty",
-    "Christopher",
-    "Un",
-    "Latrici",
-    "Sharon",
-    "Milton",
-    "Janeth",
-    "Mickey",
-    "Dario",
-    "Willard" };
+    public Queue<Mob> mob_queue;
 
-    public List<MobStats> mob_stats_list;
+    public static List<MobStats> mob_stats_list;
 
     void Start()
     {
@@ -76,6 +31,7 @@ public class Game : MonoBehaviour
         {
             time = 0;
             hour++;
+            charge();
             if(hour > 24)
             {
                 hour = 0;
@@ -84,13 +40,16 @@ public class Game : MonoBehaviour
         }
     }
 
+    private void charge()
+    {
+        foreach(Mob mob in mob_list)
+        {
+            money += mob.mob_stats.worth;
+        }
+    }
+
     public void addMob(Mob mob)
     {
         mob_list.Add(mob);
-    }
-
-    public static string getRandomName()
-    {
-        return names[Random.Range(0, 49)];
     }
 }
