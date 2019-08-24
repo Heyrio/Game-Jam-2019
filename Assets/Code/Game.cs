@@ -49,6 +49,16 @@ public class Game : MonoBehaviour
     public void addMob(Mob mob)
     {
         mob_list.Add(mob);
+        mob.inside = true;
+
+        //this os where we check if the player fucked up
+    }
+
+    public void removeMob(Mob mob)
+    {
+        mob_list.Remove(mob);
+        mob.inside = false;
+        Destroy(mob.gameObject);
     }
 
     public MobStats getRandomMobStats()

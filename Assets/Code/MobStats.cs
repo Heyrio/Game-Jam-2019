@@ -9,4 +9,5 @@ public class MobStats : ScriptableObject
     public Sprite sprite;
     public Vector2 favorite_time;
     public int worth;
+    public Vector2 staying_time;
 }
