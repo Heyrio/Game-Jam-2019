@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Mob : MonoBehaviour
 {
-    public MobStats mob_stats;
-    public Vector2[] positions;
+    //public MobStats mob_stats;
     public bool inside = false;
     public float staying_time;
+    public int age;
+    public int worth;
+    public string[] type;
+    public string[] not_like_type;
+    public StatsPanel inspect_panel;
 
     void Awake()
     {
-        mob_stats = FindObjectOfType<Game>().getRandomMobStats();
-        staying_time = Random.Range(mob_stats.staying_time.x, mob_stats.staying_time.y) * 7 * 2;
+        //randomly generate stats
+        staying_time = Random.Range(1, 72) * 4;
+        age = Random.Range(15, 80);
+        worth = Random.Range(0, 50);
+        type = Game.getRandomTypes();
+        int likes_age_range_x = Random.Range(15, 80);
+        int likes_age_range_y = Random.Range(likes_age_range_x, 80);
+        not_like_type = Game.getRandomTypes();
+        inspect_panel = GameObject.FindGameObjectWithTag("inspect_panel").GetComponent<StatsPanel>();
     }
 
     // Start is called before the first frame update
@@ -32,5 +43,20 @@ public class Mob : MonoBehaviour
                 FindObjectOfType<Game>().removeMob(this);
             }
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        inspect_panel.mob_to_display = this;
+    }
+
+    private void OnMouseExit()
+    {
+        inspect_panel.mob_to_display = null;
+    }
+
+    public void move_mob(Vector2 pos)
+    {
+        transform.position = pos;
     }
 }
