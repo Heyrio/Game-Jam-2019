@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
@@ -8,11 +9,15 @@ public class Game : MonoBehaviour
     private float time = 0f;
     private int time_diff = 4;
 
+    public TextMeshProUGUI money_text;
+
+    public Vector2 entrance;
+
     public bool can_accept_more = true;
 
-    public long money;
+    public long money = 20;
 
-    public int mob_max_count = 20;
+    public int mob_max_count = 10;
     public List<Mob> mob_list;
 
     public static string[] types =
@@ -44,34 +49,24 @@ public class Game : MonoBehaviour
         {
             time = 0;
             hours++;
-            charge();
+            money -= 5;
         }
-    }
-
-    private void charge()
-    {
-        money -= 10;
-        foreach(Mob mob in mob_list)
-        {
-            money += mob.worth;
-            money -= 10;
-        }
+        money_text.text = "$" + money;
     }
 
     public void addMob(Mob mob)
     {
-        mob_list.Add(mob);
-        mob.inside = true;
-
         if (checkClash(mob))
         {
-            money -= 500;
+            money -= 50;
             mob.inside = false;
             Destroy(mob.gameObject);
         }
         else
         {
             mob_list.Add(mob);
+            money += mob.worth;
+            mob.transform.position = entrance;
             mob.inside = true;
         }
 

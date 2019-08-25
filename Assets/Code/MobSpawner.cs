@@ -21,7 +21,7 @@ public class MobSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mob_queue.mob_queue.Count < 10)
+        if (mob_queue.mob_queue.Count < 5)
         {
             time += Time.deltaTime;
             if (time > time_diff)

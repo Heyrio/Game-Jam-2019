@@ -39,7 +39,7 @@ public class MobQueue : MonoBehaviour
     {
         if (mob_queue.Count > 0)
         {
-            current_mob = mob_queue[0];
+            current_mob = mob_queue[mob_queue.Count - 1];
         }
         else
         {
@@ -75,6 +75,7 @@ public class MobQueue : MonoBehaviour
         {
             mob_queue.Remove(current_mob);
             choose_timer = max_choose_timer;
+            Destroy(current_mob.gameObject);
             updateCurrent();
         }
     }
