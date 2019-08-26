@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 15
   worth: 0
-  type: []
-  staying_time: {x: 0, y: 0}
-  likes_age_range: {x: 0, y: 0}
-  not_like_type: []
+  type:
+  - drunk
+  staying_time: {x: 5, y: 10}
+  likes_age_range: {x: 18, y: 22}
+  not_like_type:
+  - poor
+  - boring
