@@ -27,8 +27,8 @@ public class StatsPanel : MonoBehaviour
             content.text = "Age: " + mob_to_display.age + "\n" +
                            "Pays: " + mob_to_display.worth + " to enter\n" +
                            "Stays for : " + mob_to_display.staying_time + " hours\n" +
-                           "Type: " + Game.array_to_string(mob_to_display.type) + "\n" +
-                           "Doesn't like: " + Game.array_to_string(mob_to_display.not_like_type);
+                           "Type: " + mob_to_display.type + "\n" +
+                           "Doesn't like: " + mob_to_display.not_like_type;
         }
         else
         {

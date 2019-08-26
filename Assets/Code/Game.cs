@@ -49,7 +49,7 @@ public class Game : MonoBehaviour
         {
             time = 0;
             hours++;
-            money -= 5;
+            money -= 3;
         }
         money_text.text = "$" + money;
     }
@@ -86,39 +86,29 @@ public class Game : MonoBehaviour
         return mob_stats_list[Random.Range(0, mob_stats_list.Count)];
     }
 
-    public static string[] getRandomTypes()
+    public static string getRandomType()
     {
-        int amount = Random.Range(1, 4);
-        List<string> output = new List<string>(amount);
-        int i = 0;
-        while(i < amount)
-        {
-            int s = Random.Range(0, types.Length - 1);
-            if (!output.Contains(types[s])){
-                output.Add(types[s]);
-                i++;
-            }
-        }
-        return output.ToArray();
+        int i= Random.Range(0, types.Length -1);
+        return types[i];
     }
 
-    private bool checkClash(Mob mob)
+    private bool checkClash(Mob r_mob)
     {
+        foreach(Mob mob in mob_list)
+        {
+            if(mob != r_mob)
+            {
+                if(mob.type == r_mob.not_like_type)
+                {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
     public void addMoney(int amount)
     {
         money += amount;
-    }
-
-    public static string array_to_string(string[] array)
-    {
-        string output = "";
-        foreach(string s in array)
-        {
-            output += s + ", ";
-        }
-        return output;
     }
 }

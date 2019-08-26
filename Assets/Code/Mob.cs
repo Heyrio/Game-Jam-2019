@@ -10,9 +10,8 @@ public class Mob : MonoBehaviour
     public float wait_time = 0;
     public int age;
     public int worth;
-    public string[] type;
-    public string[] not_like_type;
-    public StatsPanel inspect_panel;
+    public string type;
+    public string not_like_type;
     private Rigidbody2D rb;
 
     void Awake()
@@ -21,11 +20,10 @@ public class Mob : MonoBehaviour
         staying_time = Random.Range(1, 24) * 4;
         age = Random.Range(15, 80);
         worth = Random.Range(0, 50);
-        type = Game.getRandomTypes();
+        type = Game.getRandomType();
         int likes_age_range_x = Random.Range(15, 80);
         int likes_age_range_y = Random.Range(likes_age_range_x, 80);
-        not_like_type = Game.getRandomTypes();
-        inspect_panel = GameObject.FindGameObjectWithTag("inspect_panel").GetComponent<StatsPanel>();
+        not_like_type = Game.getRandomType();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -52,16 +50,6 @@ public class Mob : MonoBehaviour
                 change_velocity();
             }
         }
-    }
-
-    private void OnMouseEnter()
-    {
-        inspect_panel.mob_to_display = this;
-    }
-
-    private void OnMouseExit()
-    {
-        inspect_panel.mob_to_display = null;
     }
 
     public void move_mob(Vector2 pos)

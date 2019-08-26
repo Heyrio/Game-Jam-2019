@@ -25,7 +25,6 @@ public class MobQueue : MonoBehaviour
             if(choose_timer < 0f)
             {
                 denyCurrent();
-                FindObjectOfType<Game>().addMoney(-100);
             }
         }
 
