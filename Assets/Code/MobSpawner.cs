@@ -9,6 +9,7 @@ public class MobSpawner : MonoBehaviour
     public Vector2 time_interval;
     public Mob mob_prefab;
     public Mob blondguy_prefab;
+    public Mob browngirl_prefab;
     public List<Mob> mob_list;
     public Mob currentMob;
     int index;
@@ -41,6 +42,7 @@ public class MobSpawner : MonoBehaviour
     {
         mob_list.Add(mob_prefab);
         mob_list.Add(blondguy_prefab);
+        mob_list.Add(browngirl_prefab);
         index = Random.Range(0, mob_list.Count);
         currentMob = mob_list[index];
         GameObject new_mob = GameObject.Instantiate(currentMob.gameObject, spawnPosition, Quaternion.identity);
