@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     private int time_diff = 4;
 
     public TextMeshProUGUI money_text;
-
+    public AudioSource m_AudioSource;
 
     public Vector2 entrance;
 
@@ -40,7 +40,8 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-
+        m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource.Play();
     }
 
     // Update is called once per frame
@@ -54,13 +55,13 @@ public class Game : MonoBehaviour
             money -= 3;
         }
         money_text.text = "$" + money;
+        if (money <= 0)
+        {
+            Gameover();
+        }
         if (money<= 20)
         {
             money_text.color = Color.red;
-        }
-        if(money <= 0)
-        {
-            Gameover();
         }
     }
 
