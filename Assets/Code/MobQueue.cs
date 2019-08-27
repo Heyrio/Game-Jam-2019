@@ -37,7 +37,7 @@ public class MobQueue : MonoBehaviour
             mob_queue[i].move_mob(line[i]);
         }
 
-        gametime_text.text = "Countdown: " + choose_timer;
+        gametime_text.text = "Countdown: " + choose_timer.ToString("F0");
 
     }
 
