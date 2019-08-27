@@ -41,7 +41,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();
-        m_AudioSource.Play();
+        //m_AudioSource.Play();
     }
 
     // Update is called once per frame
@@ -59,7 +59,7 @@ public class Game : MonoBehaviour
         {
             Gameover();
         }
-        if (money<= 20)
+        if (money<= 20 && money>0)
         {
             money_text.color = Color.red;
         }
